@@ -1,35 +1,76 @@
 <template>
-  <div id="upper-header">
-    <div class="columns content">
-      <div class="column">
-        <a href="mailto:info@vadoanalytics.com" class="px-3 py-2">
-          <font-awesome-icon :icon="['fas', 'envelope']" />
-          info@vadoanalytics.com
-        </a>
-      </div>
-      <div class="column">
-        <a
-          href="https://www.linkedin.com/company/vado-analytics-com/"
-          target="_blank"
-          class="px-3 py-2"
-        >
-          <font-awesome-icon :icon="['fab', 'linkedin']" />
-        </a>
-        <a
-          href="https://www.youtube.com/channel/UCrhINEu5tGklN2u3-cChyMQ"
-          target="_blank"
-          class="px-3 py-2"
-        >
-          <font-awesome-icon :icon="['fab', 'youtube']" />
-        </a>
+  <header>
+    <!-- Upper Header -->
+    <div id="upper-header">
+      <div class="columns content">
+        <div class="column">
+          <a href="mailto:info@vadoanalytics.com" class="px-3 py-2">
+            <font-awesome-icon :icon="['fas', 'envelope']" />
+            info@vadoanalytics.com
+          </a>
+        </div>
+        <div class="column">
+          <a
+            href="https://www.linkedin.com/company/vado-analytics-com/"
+            target="_blank"
+            class="px-3 py-2"
+          >
+            <font-awesome-icon :icon="['fab', 'linkedin']" />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCrhINEu5tGklN2u3-cChyMQ"
+            target="_blank"
+            class="px-3 py-2"
+          >
+            <font-awesome-icon :icon="['fab', 'youtube']" />
+          </a>
+        </div>
       </div>
     </div>
-  </div>
+    <!-- /Upper Header -->
+
+    <!-- Lower Header -->
+    <div id="lower-header">
+      <div class="columns content py-2">
+        <div class="column">
+          <NuxtLink to="/">
+            <figure class="image m-0 p-0">
+              <img src="~/assets/images/png/vadoanalytics.png" />
+            </figure>
+          </NuxtLink>
+        </div>
+        <div class="column">
+          <NavLink
+            v-for="(link, index) in nav"
+            :key="index"
+            :link="link.link"
+            :label="link.label"
+            :target="link.target"
+            :subMenu="link.subMenu"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- /Lower Header -->
+  </header>
 </template>
 
 <script>
+import { useNavStore } from "~/stores/navigation";
+import NavLink from "./parts/navLink";
+
+const navigation = useNavStore();
+
 export default {
   name: "Header",
+  components: {
+    NavLink,
+  },
+  data() {
+    return {
+      nav: navigation.getNavigation,
+    };
+  },
 };
 </script>
 
@@ -43,15 +84,15 @@ export default {
   border-style: solid;
   border-width: 0px 0px 1px 0px;
   border-color: $vado-blue-2;
-  background-color: $vado-blue-1;
   min-height: 38px;
   width: 100%;
+  position: relative;
 
   a {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 500;
+    font-weight: 600;
 
     svg {
       color: $vado-blue-2;
@@ -62,6 +103,7 @@ export default {
   .columns {
     .column {
       display: flex;
+
       &:first-child {
         justify-content: flex-start;
       }
@@ -72,8 +114,47 @@ export default {
   }
 }
 
+#lower-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+  }
+
+  .columns {
+    align-items: center;
+    .column {
+      display: flex;
+      flex-basis: auto;
+      align-items: center;
+
+      &:first-child {
+        justify-content: flex-start;
+        width: 265px;
+      }
+      &:last-child {
+        justify-content: flex-end;
+        width: calc(100% - 265px);
+      }
+
+      a,
+      figure {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
-  #upper-header {
+  #upper-header,
+  #lower-header {
     .columns {
       display: flex;
     }
