@@ -1,5 +1,5 @@
 <template>
-  <a v-if="subMenu.length > 0" :target="target" @click="toLink(link)">
+  <a v-if="subMenu.length > 0" :target="target" :href="link">
     {{ label }}
     <font-awesome-icon v-if="hasSubMenu" :icon="['fas', 'caret-down']" />
     <div v-if="hasSubMenu" class="sub-menu">
@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import { routerKey } from "vue-router";
-
 export default {
   name: "NavLink",
   props: {
