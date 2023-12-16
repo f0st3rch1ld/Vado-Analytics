@@ -191,4 +191,12 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 360px) {
+  #upper-header {
+    .social-links {
+      display: none;
+    }
+  }
+}
 </style>
