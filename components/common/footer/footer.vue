@@ -1,8 +1,8 @@
 <template>
   <footer>
     <!-- Upper Footer -->
-    <div id="upper-footer" class="pt-4 pb-6">
-      <div class="columns py-6 content">
+    <div id="upper-footer" class="pt-4 pb-6 px-3">
+      <div class="columns py-6 content is-multiline">
         <div class="column" id="footer-left">
           <div class="block">
             <NuxtLink to="/">
@@ -11,7 +11,7 @@
               </figure>
             </NuxtLink>
           </div>
-          <div class="block">
+          <div class="block px-3">
             <p>
               Vado Analytics has offices in Dallas, Washington D.C., and
               Chicago.<br /><br />
@@ -23,7 +23,7 @@
           <div class="columns is-multiline pt-5">
             <div class="column is-one-quarter">
               <h3 class="title">Quick Links</h3>
-              <NuxtLink to="/" >Home </NuxtLink>
+              <NuxtLink to="/">Home </NuxtLink>
               <NuxtLink to="/blog"> Blog </NuxtLink>
               <NuxtLink
                 v-for="(link, index) in nav"
@@ -60,7 +60,7 @@
     </div>
     <!-- /Upper Footer -->
     <!-- Lower Footer -->
-    <div id="lower-footer">
+    <div id="lower-footer" class="px-3">
       <div class="columns content">
         <div class="column is-full">
           <p class="has-text-white has-text-centered p-4">
@@ -168,6 +168,25 @@ footer {
     .column {
       p {
         font-size: 0.9em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #upper-footer {
+    .columns {
+      #footer-left,
+      #footer-right {
+        width: 100%;
+      }
+
+      #footer-left {
+        align-items: flex-start;
+      }
+
+      #footer-right {
+        padding-left: 0.75rem !important;
       }
     }
   }

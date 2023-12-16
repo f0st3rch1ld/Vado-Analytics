@@ -106,4 +106,10 @@ a {
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  a {
+    display: none !important;
+  }
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
   <header>
     <!-- Upper Header -->
-    <div id="upper-header">
+    <div id="upper-header" class="px-3">
       <div class="columns content">
         <div class="column">
           <a href="mailto:info@vadoanalytics.com" class="px-3 py-2">
@@ -13,14 +13,14 @@
           <a
             href="https://www.linkedin.com/company/vado-analytics-com/"
             target="_blank"
-            class="px-3 py-2"
+            class="px-3 py-2 social-links"
           >
             <font-awesome-icon :icon="['fab', 'linkedin']" />
           </a>
           <a
             href="https://www.youtube.com/channel/UCrhINEu5tGklN2u3-cChyMQ"
             target="_blank"
-            class="px-3 py-2"
+            class="px-3 py-2 social-links"
           >
             <font-awesome-icon :icon="['fab', 'youtube']" />
           </a>
@@ -30,12 +30,15 @@
     <!-- /Upper Header -->
 
     <!-- Lower Header -->
-    <div id="lower-header">
+    <div id="lower-header" class="px-3">
       <div class="columns content py-2">
         <div class="column">
           <NuxtLink to="/">
-            <figure class="image m-0 p-0">
+            <figure class="image m-0 p-0" id="logo-large">
               <img src="~/assets/images/svg/vado-logo-2.svg" />
+            </figure>
+            <figure class="image m-0 p-0" id="logo-small">
+              <img src="~/assets/images/svg/vado-logo-1.svg" />
             </figure>
           </NuxtLink>
         </div>
@@ -48,6 +51,7 @@
             :target="link.target"
             :subMenu="link.subMenu"
           />
+          <NavHam @toggleMenu="toggleMenu()" />
         </div>
       </div>
     </div>
@@ -58,6 +62,7 @@
 <script>
 import { useNavStore } from "~/stores/navigation";
 import NavLink from "./parts/navLink";
+import NavHam from "./parts/navHam";
 
 const navigation = useNavStore();
 
@@ -65,11 +70,15 @@ export default {
   name: "Header",
   components: {
     NavLink,
+    NavHam,
   },
   data() {
     return {
       nav: navigation.getNavigation,
     };
+  },
+  methods: {
+    toggleMenu() {},
   },
 };
 </script>
@@ -157,6 +166,28 @@ export default {
   #lower-header {
     .columns {
       display: flex;
+    }
+  }
+}
+
+#logo-small {
+  display: none !important;
+  width: 50px;
+}
+
+@media screen and (max-width: 400px) {
+  #upper-header {
+    .social-links {
+      padding: 0.25rem !important;
+    }
+  }
+
+  #lower-header {
+    #logo-large {
+      display: none;
+    }
+    #logo-small {
+      display: flex !important;
     }
   }
 }
