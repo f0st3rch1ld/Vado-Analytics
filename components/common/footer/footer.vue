@@ -161,6 +161,7 @@ footer {
   justify-content: center;
   background-color: $vado-blue-3;
   font-weight: 500;
+  overflow: hidden;
 
   .columns {
     justify-content: center;
