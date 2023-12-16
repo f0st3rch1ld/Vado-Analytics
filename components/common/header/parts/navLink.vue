@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="link" :target="target">
+  <a v-if="subMenu.length > 0" :href="link" :target="target">
     {{ label }}
     <font-awesome-icon v-if="hasSubMenu" :icon="['fas', 'caret-down']" />
     <div v-if="hasSubMenu" class="sub-menu">
@@ -10,7 +10,8 @@
         >{{ item.label }}</NuxtLink
       >
     </div>
-  </NuxtLink>
+  </a>
+  <NuxtLink v-else :to="link" :target="target">{{ label }}</NuxtLink>
 </template>
 
 <script>
@@ -96,14 +97,11 @@ a {
       text-align: right;
       text-wrap: nowrap;
       padding: 0.7em 1em;
-      transition-timing-function: ease-in-out;
-      transition-duration: 0.1s;
+      transition-duration: 0s;
 
       &:hover {
-        background-color: $vado-blue-2;
+        background: linear-gradient(45deg, $vado-green-1, $vado-blue-2);
         color: #fff;
-        transition-timing-function: ease-in-out;
-        transition-duration: 0.1s;
       }
     }
   }

@@ -7,7 +7,7 @@
           <div class="block">
             <NuxtLink to="/">
               <figure class="image m-0 p-0">
-                <img src="~/assets/images/png/vadoanalytics.png" />
+                <img src="~/assets/images/svg/vado-logo-2.svg" />
               </figure>
             </NuxtLink>
           </div>
@@ -23,6 +23,7 @@
           <div class="columns is-multiline pt-5">
             <div class="column is-one-quarter">
               <h3 class="title">Quick Links</h3>
+              <NuxtLink to="/" >Home </NuxtLink>
               <NuxtLink to="/blog"> Blog </NuxtLink>
               <NuxtLink
                 v-for="(link, index) in nav"

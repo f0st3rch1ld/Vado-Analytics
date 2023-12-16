@@ -2,7 +2,7 @@
   <section class="section">
     <div class="columns content">
       <div class="column">
-        <h1>
+        <h1 class="title">
           <slot />
         </h1>
       </div>

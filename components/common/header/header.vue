@@ -35,7 +35,7 @@
         <div class="column">
           <NuxtLink to="/">
             <figure class="image m-0 p-0">
-              <img src="~/assets/images/png/vadoanalytics.png" />
+              <img src="~/assets/images/svg/vado-logo-2.svg" />
             </figure>
           </NuxtLink>
         </div>
