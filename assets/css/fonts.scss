@@ -1,0 +1,25 @@
+// We're using Overpass from Google as the default font for the website, as it's very similar to the font used on the original theme "futura"
+@import url("https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Overpass:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Overpass", sans-serif;
+  color: $vado-blue-3;
+}
+
+a {
+  color: $vado-blue-3;
+  &:hover {
+    color: $vado-blue-2;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title {
+  font-family: "Afacad", sans-serif;
+  color: $vado-blue-3;
+}
