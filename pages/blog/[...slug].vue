@@ -1,4 +1,5 @@
 <template>
+  <TitleSection>{{ article }}</TitleSection>
   <Content>
     <ContentDoc>
       <template #not-found>
@@ -10,10 +11,15 @@
 
 <script>
 import Content from "~/components/common/content";
+import TitleSection from "~/components/common/page/titleSection";
 
 export default {
   components: {
     Content,
+    TitleSection,
+  },
+  mounted() {
+    console.log(this.article);
   },
 };
 </script>
