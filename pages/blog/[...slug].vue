@@ -1,12 +1,10 @@
 <template>
-  <TitleSection>{{ article }}</TitleSection>
-  <Content>
-    <ContentDoc>
-      <template #not-found>
-        <h1>Page not found</h1>
-      </template>
-    </ContentDoc>
-  </Content>
+  <ContentDoc v-slot="{ doc }">
+    <TitleSection>{{ doc.title }}</TitleSection>
+    <Content>
+      <ContentRenderer :value="doc" />
+    </Content>
+  </ContentDoc>
 </template>
 
 <script>
@@ -17,9 +15,6 @@ export default {
   components: {
     Content,
     TitleSection,
-  },
-  mounted() {
-    console.log(this.article);
   },
 };
 </script>
