@@ -46,11 +46,15 @@
             <div class="column is-one-third">
               <h3 class="title">Contact Us</h3>
               <a>
-                <font-awesome-icon :icon="['fas', 'house']" />
+                <ClientOnly>
+                  <font-awesome-icon icon="house" />
+                </ClientOnly>
                 Dallas, TX
               </a>
               <a href="mailto:info@vadoanalytics.com">
-                <font-awesome-icon :icon="['fas', 'envelope']" />
+                <ClientOnly>
+                  <font-awesome-icon icon="envelope" />
+                </ClientOnly>
                 info@vadoanalytics.com
               </a>
             </div>

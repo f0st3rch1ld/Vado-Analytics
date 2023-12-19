@@ -5,7 +5,9 @@
       <div class="columns content">
         <div class="column">
           <a href="mailto:info@vadoanalytics.com" class="px-3 py-2">
-            <font-awesome-icon :icon="['fas', 'envelope']" />
+            <ClientOnly>
+              <font-awesome-icon icon="envelope" />
+            </ClientOnly>
             info@vadoanalytics.com
           </a>
         </div>
@@ -15,14 +17,18 @@
             target="_blank"
             class="px-3 py-2 social-links"
           >
-            <font-awesome-icon :icon="['fab', 'linkedin']" />
+            <ClientOnly>
+              <font-awesome-icon :icon="['fab', 'linkedin']" />
+            </ClientOnly>
           </a>
           <a
             href="https://www.youtube.com/channel/UCrhINEu5tGklN2u3-cChyMQ"
             target="_blank"
             class="px-3 py-2 social-links"
           >
-            <font-awesome-icon :icon="['fab', 'youtube']" />
+            <ClientOnly>
+              <font-awesome-icon :icon="['fab', 'youtube']" />
+            </ClientOnly>
           </a>
         </div>
       </div>

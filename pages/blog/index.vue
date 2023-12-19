@@ -1,10 +1,7 @@
 <template>
-  <Head>
-    <Title>What We've Done | Vado Analytics</Title>
-  </Head>
   <Content>
     <div class="column is-full">
-      <p>Page Content</p>
+      <ContentDoc />
     </div>
   </Content>
 </template>
@@ -13,7 +10,7 @@
 import Content from "~/components/common/content";
 
 export default {
-  name: "Previous Engagements",
+  name: "Contact Us",
   components: {
     Content,
   },
