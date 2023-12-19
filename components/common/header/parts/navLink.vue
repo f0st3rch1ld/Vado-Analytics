@@ -1,9 +1,7 @@
 <template>
   <a v-if="subMenu.length > 0" :target="target" :href="link">
     {{ label }}
-    <ClientOnly>
       <font-awesome-icon v-if="hasSubMenu" icon="caret-down" />
-    </ClientOnly>
     <div v-if="hasSubMenu" class="sub-menu">
       <NuxtLink
         v-for="(item, index) in subMenu"

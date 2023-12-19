@@ -49,14 +49,17 @@
           </NuxtLink>
         </div>
         <div class="column">
-          <NavLink
-            v-for="(link, index) in nav"
-            :key="index"
-            :link="link.link"
-            :label="link.label"
-            :target="link.target"
-            :subMenu="link.subMenu"
-          />
+          <ClientOnly>
+            <NavLink
+              v-for="(link, index) in nav"
+              :key="index"
+              :link="link.link"
+              :label="link.label"
+              :target="link.target"
+              :subMenu="link.subMenu"
+            />
+          </ClientOnly>
+
           <NavHam @toggleMenu="toggleMenu()" />
         </div>
       </div>
