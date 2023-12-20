@@ -1,46 +1,25 @@
 <template>
   <TitleSection>Vado Blog</TitleSection>
   <Content>
-    <div class="column is-full">
-      <ClientOnly>
-        <ContentList path="/blog" v-slot="{ list }">
-          <div class="article-tiles-container">
-            <ArticleTile
-              v-for="article in list"
-              :key="article._path"
-              :title="article.title"
-              :description="article.description"
-              :postDate="article.postDate"
-              :postThumb="article.postThumb"
-              :postLink="article._path"
-            />
-          </div>
-        </ContentList>
-      </ClientOnly>
-    </div>
+    <ClientOnly>
+      <ContentList path="/blog" v-slot="{ list }">
+        <Pagination :data="list" />
+      </ContentList>
+    </ClientOnly>
   </Content>
 </template>
 
 <script>
 import Content from "~/components/common/content";
 import TitleSection from "~/components/common/page/titleSection";
-import ArticleTile from "~/components/common/blog/articleTile";
+import Pagination from "~/components/common/blog/pagination";
 
 export default {
   name: "Contact Us",
   components: {
     Content,
     TitleSection,
-    ArticleTile,
+    Pagination,
   },
 };
 </script>
-
-<style lang="scss">
-.article-tiles-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-</style>
