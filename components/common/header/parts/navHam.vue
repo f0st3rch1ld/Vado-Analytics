@@ -50,7 +50,6 @@ export default {
   methods: {
     toggleMenu() {
       this.menuActive = !this.menuActive;
-      this.$emit(toggleMenu);
     },
   },
 };
@@ -102,7 +101,7 @@ export default {
   overflow: hidden;
 
   &.is-active {
-    height: 260px;
+    height: 300px;
     width: 180px;
     transition-timing-function: ease-in-out;
     transition-duration: 0.3s;

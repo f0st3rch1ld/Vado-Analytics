@@ -18,7 +18,12 @@
         </option>
       </select>
     </div>
-    <nav class="pagination is-right" role="navigation" aria-label="pagination">
+    <nav
+      v-if="totalPages > 1"
+      class="pagination is-right"
+      role="navigation"
+      aria-label="pagination"
+    >
       <a class="pagination-previous" @click="prevPage()">Previous</a>
       <a class="pagination-next" @click="nextPage()">Next page</a>
       <ul class="pagination-list">
@@ -109,7 +114,12 @@
         :postCategory="article.postCategory"
       />
     </div>
-    <nav class="pagination is-right" role="navigation" aria-label="pagination">
+    <nav
+      v-if="totalPages > 1"
+      class="pagination is-right"
+      role="navigation"
+      aria-label="pagination"
+    >
       <a class="pagination-previous" @click="prevPage()">Previous</a>
       <a class="pagination-next" @click="nextPage()">Next page</a>
       <ul class="pagination-list">

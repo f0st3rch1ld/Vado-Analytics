@@ -24,7 +24,6 @@
             <div class="column is-one-quarter">
               <h3 class="title">Quick Links</h3>
               <NuxtLink to="/">Home </NuxtLink>
-              <NuxtLink to="/blog"> Blog </NuxtLink>
               <NuxtLink
                 v-for="(link, index) in nav"
                 :key="index"

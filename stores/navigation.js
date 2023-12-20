@@ -44,6 +44,12 @@ export const useNavStore = defineStore("nav", {
           subMenu: [],
         },
         {
+          label: "Blog",
+          link: "/blog",
+          target: "_self",
+          subMenu: [],
+        },
+        {
           label: "Contact Us",
           link: "/contact-us",
           target: "_self",

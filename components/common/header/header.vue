@@ -60,7 +60,7 @@
             />
           </ClientOnly>
 
-          <NavHam @toggleMenu="toggleMenu()" />
+          <NavHam />
         </div>
       </div>
     </div>
@@ -85,9 +85,6 @@ export default {
     return {
       nav: navigation.getNavigation,
     };
-  },
-  methods: {
-    toggleMenu() {},
   },
 };
 </script>
