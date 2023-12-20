@@ -7,10 +7,20 @@
     </NuxtLink>
     <div class="content px-4 py-5">
       <div class="block">
-        <p class="sub-title post-date">
-          <font-awesome-icon icon="clock" />
-          <i>{{ postDate }}</i>
-        </p>
+        <div class="columns">
+          <div class="column">
+            <p class="sub-title post-date">
+              <font-awesome-icon icon="clock" />
+              <i>{{ postDate }}</i>
+            </p>
+          </div>
+          <div v-if="postCategory !== 'none'" class="column">
+            <p class="sub-title has-text-right">
+              <i>{{ postCategory }}</i>
+            </p>
+          </div>
+        </div>
+
         <NuxtLink :to="postLink">
           <h2 class="title">{{ title }}</h2>
         </NuxtLink>
@@ -50,6 +60,10 @@ export default {
       type: String,
       required: true,
     },
+    postCategory: {
+      type: String,
+      default: "none",
+    },
   },
   computed: {
     descriptionSubstring() {
@@ -72,12 +86,18 @@ export default {
 <style lang="scss" scoped>
 .card {
   width: 400px;
-  margin: 15px 10px;
+  margin: 25px 10px;
 
   .post-date {
     svg {
       margin-right: 0.5rem;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
   }
 }
 </style>

@@ -1,9 +1,21 @@
 <template>
   <div class="column is-full">
-    <div class="select">
+    <div class="select mb-3 mx-1">
       <select v-model="sortBy">
         <option value="dateDesc">Sort-By: Date - Descending</option>
         <option value="dateAsc">Sort-By: Date - Ascending</option>
+      </select>
+    </div>
+    <div class="select mb-3 mx-1">
+      <select v-model="postCategories">
+        <option value="all">All</option>
+        <option
+          v-for="(category, index) in categoriesFiltered"
+          :key="index"
+          :value="category"
+        >
+          {{ category }}
+        </option>
       </select>
     </div>
     <nav class="pagination is-right" role="navigation" aria-label="pagination">
@@ -94,6 +106,7 @@
         :postDate="article.postDate"
         :postThumb="article.postThumb"
         :postLink="article._path"
+        :postCategory="article.postCategory"
       />
     </div>
     <nav class="pagination is-right" role="navigation" aria-label="pagination">
@@ -199,9 +212,18 @@ export default {
       itemsPerPage: 9,
       activePage: 1,
       sortBy: "dateDesc",
+      postCategories: "all",
     };
   },
   computed: {
+    dataFiltered() {
+      return this.dataSorted.filter((data) => {
+        return (
+          this.postCategories === "all" ||
+          this.postCategories === data.postCategory
+        );
+      });
+    },
     dataSorted() {
       switch (this.sortBy) {
         case "dateAsc":
@@ -244,13 +266,21 @@ export default {
           });
       }
     },
+    categoriesFiltered() {
+      let postCategories = [];
+      this.dataSorted.forEach((post) => {
+        postCategories.push(post.postCategory);
+      });
+      let unique = [...new Set(postCategories)];
+      return unique;
+    },
     currentPage() {
       const sliceStart = (this.activePage - 1) * this.itemsPerPage;
       const sliceEnd = sliceStart + this.itemsPerPage;
-      return this.dataSorted.slice(sliceStart, sliceEnd);
+      return this.dataFiltered.slice(sliceStart, sliceEnd);
     },
     totalPages() {
-      return Math.ceil(this.data.length / this.itemsPerPage);
+      return Math.ceil(this.dataFiltered.length / this.itemsPerPage);
     },
   },
   methods: {
@@ -277,11 +307,15 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .pagination-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+ul {
+  margin-top: 0 !important;
 }
 </style>
