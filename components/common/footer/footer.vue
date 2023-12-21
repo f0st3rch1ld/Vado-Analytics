@@ -67,7 +67,7 @@
       <div class="columns content">
         <div class="column is-full">
           <p class="has-text-white has-text-centered p-4">
-            Copyright &copy; {{ currentYear }} Vado Analytics
+            Copyright &copy; {{ currentYear }} Vado Analytics | Built with more <font-awesome-icon icon="heart" /><font-awesome-icon icon="heart" /><font-awesome-icon icon="heart" /> by Renown
           </p>
         </div>
       </div>
