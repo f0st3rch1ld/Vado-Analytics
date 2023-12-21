@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <div class="columns content">
-      <div class="column">
+      <div class="column is-two-thirds">
         <h1 class="title">
           <slot />
         </h1>
