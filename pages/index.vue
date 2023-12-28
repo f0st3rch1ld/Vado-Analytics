@@ -3,7 +3,7 @@
     <Head>
       <Title>Home | Vado Analytics</Title>
     </Head>
-    <TitleSection> Home </TitleSection>
+    <Splash />
     <Content>
       <div class="column is-full">
         <p>Page Content</p>
@@ -15,12 +15,14 @@
 <script>
 import Content from "~/components/common/content";
 import TitleSection from "~/components/common/page/titleSection";
+import Splash from "~/components/page/home/splash";
 
 export default {
   name: "Home",
   components: {
     Content,
     TitleSection,
+    Splash,
   },
 };
 </script>
