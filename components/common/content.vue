@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section" :id="id">
     <div class="columns content">
       <slot />
     </div>
@@ -9,6 +9,12 @@
 <script>
 export default {
   name: "Content",
+  props: {
+    id: {
+      type: String,
+      default: "",
+    },
+  },
 };
 </script>
 
@@ -16,5 +22,6 @@ export default {
 section {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 </style>

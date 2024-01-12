@@ -102,6 +102,7 @@ export default {
   min-height: 38px;
   width: 100%;
   position: relative;
+  z-index: 1;
 
   a {
     display: flex;
@@ -133,6 +134,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 1;
 
   a {
     display: flex;
