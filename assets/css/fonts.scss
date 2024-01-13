@@ -23,3 +23,13 @@ h6,
   font-family: "Afacad", sans-serif;
   color: $vado-blue-3;
 }
+
+h2 {
+  font-weight: 300 !important;
+  line-height: 0.8 !important;
+
+  span {
+    font-weight: 700 !important;
+    font-size: 0.35em;
+  }
+}
