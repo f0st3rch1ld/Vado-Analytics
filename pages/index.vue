@@ -99,6 +99,40 @@
     </section>
     <!-- /Who We Are -->
 
+    <!-- Why Us -->
+    <section class="section" id="why-us-container">
+      <div class="columns content is-vcentered">
+        <div class="column">
+          <figure class="image">
+            <img
+              src="~/assets/images/webp/Defining-Competitive-Marketplaces-new.webp"
+            />
+          </figure>
+        </div>
+        <div class="column">
+          <div class="block">
+            <h2 class="title is-size-1">
+              <span>WHY US</span><br />
+              Defining Competitive Marketplaces
+            </h2>
+          </div>
+          <div class="block">
+            <p>
+              Vado Analytics is a marketing data analytics firm with locations
+              in Dallas, Washington D.C., and Chicago.
+            </p>
+            <p>
+              We are pioneers in predictive defining competitive marketplaces
+              with unique access to real-time and historical geospatial
+              intelligence, anonymized mobile device data, and US consumer data
+              with Commercial web traffic.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Why Us -->
+
     <Content>
       <div class="column is-full">
         <p>Page Content</p>
@@ -177,7 +211,7 @@ h1 {
 }
 
 #who-we-are-content {
-  margin: -200px 0px 0px 0px;
+  margin: -100px 0px 0px 0px;
   color: #fff;
   position: relative;
   z-index: 1;
@@ -250,6 +284,12 @@ h1 {
     width: 100vw;
     top: 0;
     pointer-events: none;
+  }
+}
+
+#why-us-container {
+  figure {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   }
 }
 
