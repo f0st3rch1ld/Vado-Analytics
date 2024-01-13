@@ -134,6 +134,10 @@
     </section>
     <!-- /Why Us -->
 
+    <!-- Explore Our Services -->
+    <ExploreOurServices />
+    <!-- /Explore Our Services -->
+
     <!-- Operations -->
     <section class="section" id="operations-container">
       <div class="columns content is-vcentered">
@@ -189,10 +193,10 @@
 </template>
 
 <script>
-import { reloadNuxtApp } from "nuxt/app";
 import Content from "~/components/common/content";
 import TitleSection from "~/components/common/page/titleSection";
 import SplashLogo from "~/components/page/home/splashLogo";
+import ExploreOurServices from "~/components/page/home/exploreOurServices";
 
 export default {
   name: "Home",
@@ -200,6 +204,7 @@ export default {
     Content,
     TitleSection,
     SplashLogo,
+    ExploreOurServices,
   },
 };
 </script>
