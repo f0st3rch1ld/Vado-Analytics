@@ -11,7 +11,7 @@ const Nodes = {
   density: 40,
 
   drawDistance: 75,
-  baseRadius: 12.5,
+  baseRadius: 6,
   maxLineThickness: 6,
   reactionSensitivity: 30,
   lineThickness: .5,

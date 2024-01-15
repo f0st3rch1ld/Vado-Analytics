@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <NuxtLink class="card-image" :to="postLink">
-      <figure class="image is-4by3 m-0">
+      <figure class="image m-0">
         <img :src="postThumbnail()" />
       </figure>
     </NuxtLink>
@@ -86,7 +86,18 @@ export default {
 <style lang="scss" scoped>
 .card {
   width: 400px;
+  min-height: 625px;
   margin: 25px 10px;
+
+  .card-image {
+    figure {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      height: 250px;
+    }
+  }
 
   .post-date {
     svg {
