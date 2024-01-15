@@ -241,6 +241,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0.5;
 }
 
 h1 {
