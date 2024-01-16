@@ -1,6 +1,6 @@
 <template>
-  <section class="section" :id="id">
-    <div class="columns content">
+  <section class="section" :id="id" :style="sectionStyles">
+    <div :class="columnsClasses">
       <slot />
     </div>
   </section>
@@ -13,6 +13,28 @@ export default {
     id: {
       type: String,
       default: "",
+    },
+    vcentered: {
+      type: Boolean,
+      default: true,
+    },
+    sectionBackground: {
+      type: String,
+      default: "initial",
+    },
+  },
+  computed: {
+    columnsClasses() {
+      return {
+        columns: true,
+        content: true,
+        "is-vcentered": this.vcentered,
+      };
+    },
+    sectionStyles() {
+      return {
+        "background-color": this.sectionBackground,
+      };
     },
   },
 };
