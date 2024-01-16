@@ -3,14 +3,8 @@
     <Head>
       <Title>Home | Vado Analytics</Title>
     </Head>
-
-    <!-- Splash -->
     <Splash />
-    <!-- /Splash -->
-
-    <!-- Who We Are -->
     <WhoWeAre />
-    <!-- /Who We Are -->
 
     <!-- Why Us -->
     <section class="section" id="why-us-container">
@@ -47,9 +41,7 @@
     </section>
     <!-- /Why Us -->
 
-    <!-- Explore Our Services -->
     <ExploreOurServices />
-    <!-- /Explore Our Services -->
 
     <!-- Operations -->
     <section class="section" id="operations-container">
@@ -103,9 +95,8 @@
     </section>
     <!-- /Operations -->
 
-    <!-- TransformYourBusiness -->
     <TransformYourBusiness />
-    <!-- /TransformYourBusiness -->
+    <RecentPosts />
   </div>
 </template>
 
@@ -114,6 +105,7 @@ import Splash from "~/components/page/home/splash";
 import ExploreOurServices from "~/components/page/home/exploreOurServices";
 import WhoWeAre from "~/components/page/home/whoWeAre";
 import TransformYourBusiness from "~/components/page/home/transformYourBusiness";
+import RecentPosts from "~/components/common/blog/recentPosts";
 
 export default {
   name: "Home",
@@ -122,6 +114,7 @@ export default {
     WhoWeAre,
     ExploreOurServices,
     TransformYourBusiness,
+    RecentPosts,
   },
 };
 </script>

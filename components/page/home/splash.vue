@@ -1,8 +1,8 @@
 <template>
   <div id="splash-background"></div>
   <section class="section" id="splash-content">
-    <div class="columns content">
-      <div class="column is-three-fifths">
+    <div class="columns content is-multiline">
+      <div class="column is-full">
         <h1 class="title">
           <span id="defining">Defining</span><br />
           <span id="competitive">Competitive</span><br />
@@ -75,9 +75,18 @@ h1 {
   #competitive,
   #marketplaces {
     font-weight: 900;
-    font-size: 7vw;
+    font-size: 5em;
     line-height: 0.8;
     color: $vado-blue-3;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  h1 {
+    #competitive,
+    #marketplaces {
+      font-size: 14vw;
+    }
   }
 }
 </style>
