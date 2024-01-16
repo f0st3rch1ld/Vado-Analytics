@@ -111,24 +111,57 @@
         <div class="slider-content" id="new-location-placement-content">
           <div class="columns content">
             <div class="column">
-                <h3 class="title is-size-2">New Location Placement</h3>
-                <p>Stop guessing on where to open your location. Using 3rd party GPS data we can tell you the optimal area to open you new location based on who goes to your store, your competitors’ stores, and the areas that are least served in the marketplace.<br /><br />Instead of guessing one of the most important aspects of your business, make an informed decision of where your new location should be. In addition, use our analysis to determine the appropriate marketing plan to ensure that your new locations is a success.</p>
+              <h3 class="title is-size-2">New Location Placement</h3>
+              <p>
+                Stop guessing on where to open your location. Using 3rd party
+                GPS data we can tell you the optimal area to open you new
+                location based on who goes to your store, your competitors’
+                stores, and the areas that are least served in the
+                marketplace.<br /><br />Instead of guessing one of the most
+                important aspects of your business, make an informed decision of
+                where your new location should be. In addition, use our analysis
+                to determine the appropriate marketing plan to ensure that your
+                new locations is a success.
+              </p>
             </div>
             <div class="column">
-                <h3 class="title is-size-2">Strategic Location Selection</h3>
-                <p>Our approach is to be with you from start to finish of your location expansion. We recommend where your location should be and will work with your real estate team to determine the appropriate sites.<br /><br />But that is only half of the effort, we will then work with your marketing departments to implement a marketing strategy that ensures results. If we have 1st party transaction detail we are also able to provided an expected revenue forecast for the first 24 months of the new store, so you are able to plan accordingly.</p>
+              <h3 class="title is-size-2">Strategic Location Selection</h3>
+              <p>
+                Our approach is to be with you from start to finish of your
+                location expansion. We recommend where your location should be
+                and will work with your real estate team to determine the
+                appropriate sites.<br /><br />But that is only half of the
+                effort, we will then work with your marketing departments to
+                implement a marketing strategy that ensures results. If we have
+                1st party transaction detail we are also able to provided an
+                expected revenue forecast for the first 24 months of the new
+                store, so you are able to plan accordingly.
+              </p>
             </div>
           </div>
         </div>
         <div class="slider-content" id="custom-analytics-projects-content">
           <div class="columns content">
             <div class="column">
-                <h3 class="title is-size-2">Custom Analytics Projects</h3>
-                <p>Our most frequent engagements. Combine the power of 3rd party GPS sources with your 1st party sales data to get a truly refined sense of the marketplace. We layer your sales data on top of your competitors’ traffic to get a sense of where, who, and how you should be marketing to maximize ROI.</p>
+              <h3 class="title is-size-2">Custom Analytics Projects</h3>
+              <p>
+                Our most frequent engagements. Combine the power of 3rd party
+                GPS sources with your 1st party sales data to get a truly
+                refined sense of the marketplace. We layer your sales data on
+                top of your competitors’ traffic to get a sense of where, who,
+                and how you should be marketing to maximize ROI.
+              </p>
             </div>
             <div class="column">
-                <h3 class="title is-size-2">Partnership Approach</h3>
-                <p>Our partnership approach ensures that we will assist you with not only your initial campaign deployment, but a custom machine learning model that continuously enhances your marketing efforts to optimize ROI.<br /><br />We partner with you after deployment to assist your marketing teams on enhancements to your marketing campaigns to ensure success.</p>
+              <h3 class="title is-size-2">Partnership Approach</h3>
+              <p>
+                Our partnership approach ensures that we will assist you with
+                not only your initial campaign deployment, but a custom machine
+                learning model that continuously enhances your marketing efforts
+                to optimize ROI.<br /><br />We partner with you after deployment
+                to assist your marketing teams on enhancements to your marketing
+                campaigns to ensure success.
+              </p>
             </div>
           </div>
         </div>
@@ -144,6 +177,7 @@ export default {
   data() {
     return {
       activeSlide: 0,
+      navigated: false,
       window: {
         width: 0,
       },
@@ -158,7 +192,19 @@ export default {
   },
   methods: {
     switchSlide(slide) {
+      if (!this.navigated) {
+        this.navigated = true;
+      }
       this.activeSlide = slide;
+    },
+    autoIncrement() {
+      if (!this.navigated) {
+        if (this.activeSlide === 3) {
+          this.activeSlide = 0;
+        } else {
+          this.activeSlide++;
+        }
+      }
     },
     iconClasses(slide) {
       return {
@@ -173,9 +219,11 @@ export default {
   mounted() {
     window.addEventListener("resize", this.handleResize);
     this.handleResize();
+    setInterval(this.autoIncrement, 5000);
   },
   destroyed() {
     window.removeEventListener("resize", this.handleResize);
+    clearInterval(this.autoIncrement);
   },
 };
 </script>

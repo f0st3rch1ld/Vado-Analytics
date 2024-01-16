@@ -348,6 +348,5 @@ export default {
 <style lang="scss" scoped>
 #canvas {
   position: absolute;
-  left:-150%;
 }
 </style>
