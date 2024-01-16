@@ -7,7 +7,7 @@
           Recent Posts
         </h2>
       </div>
-      <div class="is-flex is-justify-content-center is-align-items-flex-start">
+      <div class="is-flex is-justify-content-center is-align-items-flex-start is-flex-wrap-wrap">
         <ClientOnly>
           <ContentList path="/blog" v-slot="{ list }">
             <template v-for="(article, index) in list">
