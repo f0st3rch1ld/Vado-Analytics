@@ -8,5 +8,13 @@ export default defineNuxtConfig({
   css: [
     '@/assets/css/main.scss',
     '@fortawesome/fontawesome-svg-core/styles.css'
-  ]
+  ],
+  routeRules: {
+    'previous-engagements': {
+      redirect: {
+        to: '/',
+        statusCode: 307
+      }
+    }
+  }
 })
