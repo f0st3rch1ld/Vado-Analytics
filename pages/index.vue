@@ -9,7 +9,7 @@
     <ExploreOurServices />
     <Operations />
     <TransformYourBusiness />
-    <RecentPosts />
+    <!-- <RecentPosts /> -->
   </div>
 </template>
 
@@ -20,7 +20,7 @@ import WhyUs from "~/components/page/home/whyUs";
 import ExploreOurServices from "~/components/page/home/exploreOurServices";
 import Operations from "~/components/page/home/operations";
 import TransformYourBusiness from "~/components/page/home/transformYourBusiness";
-import RecentPosts from "~/components/common/blog/recentPosts";
+//import RecentPosts from "~/components/common/blog/recentPosts";
 
 export default {
   name: "Home",
@@ -31,7 +31,7 @@ export default {
     Operations,
     ExploreOurServices,
     TransformYourBusiness,
-    RecentPosts,
+    //RecentPosts,
   },
 };
 </script>
