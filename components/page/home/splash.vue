@@ -48,6 +48,8 @@ export default {
   height: 100vh;
   min-height: 550px;
   width: 100vw;
+  position: relative;
+  z-index: 0;
 
   .content {
     margin: auto !important;

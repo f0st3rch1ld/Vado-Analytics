@@ -16,5 +16,11 @@ export default defineNuxtConfig({
         statusCode: 307
       }
     }
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/sitemap.xml']
+    }
   }
 })

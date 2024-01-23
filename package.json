@@ -24,6 +24,7 @@
     "@nuxt/content": "^2.9.0",
     "@pinia/nuxt": "^0.5.1",
     "pinia": "^2.1.7",
+    "sitemap": "^7.1.1",
     "validator": "^13.11.0"
   }
 }
