@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@pinia/nuxt',
-    '@nuxt/content'
+    // '@nuxt/content'
   ],
   css: [
     '@/assets/css/main.scss',
