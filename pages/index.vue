@@ -8,7 +8,7 @@
     <WhyUs />
     <ExploreOurServices />
     <Operations />
-    <TransformYourBusiness />
+    <!-- <TransformYourBusiness /> -->
     <RecentPosts />
   </div>
 </template>
@@ -19,7 +19,7 @@ import WhoWeAre from "~/components/page/home/whoWeAre";
 import WhyUs from "~/components/page/home/whyUs";
 import ExploreOurServices from "~/components/page/home/exploreOurServices";
 import Operations from "~/components/page/home/operations";
-import TransformYourBusiness from "~/components/page/home/transformYourBusiness";
+// import TransformYourBusiness from "~/components/page/home/transformYourBusiness";
 import RecentPosts from "~/components/common/blog/recentPosts";
 
 export default {
@@ -30,7 +30,7 @@ export default {
     WhyUs,
     Operations,
     ExploreOurServices,
-    TransformYourBusiness,
+    // TransformYourBusiness,
     RecentPosts,
   },
 };

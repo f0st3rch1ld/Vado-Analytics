@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
   devtools: { enabled: true },
   modules: [
     '@pinia/nuxt',
@@ -15,6 +16,18 @@ export default defineNuxtConfig({
         to: '/',
         statusCode: 307
       }
+    }
+  },
+  nitro: {
+    prerender: {
+      routes: [
+        '/sitemap.xml'
+      ]
+    }
+  },
+  content: {
+    experimental: {
+      clientDB: true
     }
   }
 })

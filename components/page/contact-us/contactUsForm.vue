@@ -91,7 +91,7 @@
       <div class="column is-full">
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link" @click="sendEmail">
+            <button :class="submitButtonClasses" @click="sendEmail">
               Send Email
             </button>
           </div>
@@ -143,7 +143,8 @@ export default {
     submitButtonClasses() {
       return {
         button: true,
-        "is-link": this.requiredFields(),
+        "is-light": !this.requiredFields,
+        "is-link": this.requiredFields,
       };
     },
     generatedLink() {
@@ -211,7 +212,9 @@ export default {
   position: relative;
 
   .button {
-    background-color: $vado-blue-2;
+    &.is-link {
+      background-color: $vado-blue-2;
+    }
   }
 
   label {
