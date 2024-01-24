@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
   devtools: { enabled: true },
   modules: [
     '@pinia/nuxt',
@@ -19,8 +20,14 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      crawlLinks: true,
-      routes: ['/sitemap.xml']
+      routes: [
+        '/sitemap.xml'
+      ]
+    }
+  },
+  content: {
+    experimental: {
+      clientDB: true
     }
   }
 })

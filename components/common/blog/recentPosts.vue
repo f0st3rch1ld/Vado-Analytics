@@ -9,7 +9,7 @@
       </div>
       <div class="is-flex is-justify-content-center is-align-items-flex-start is-flex-wrap-wrap">
         <ClientOnly>
-          <!-- <ContentList path="/blog" v-slot="{ list }">
+          <ContentList path="/blog" v-slot="{ list }">
             <template v-for="(article, index) in list">
               <ArticleTile
                 v-if="index < 3"
@@ -22,7 +22,7 @@
                 :postCategory="article.postCategory"
               />
             </template>
-          </ContentList> -->
+          </ContentList>
         </ClientOnly>
       </div>
     </div>

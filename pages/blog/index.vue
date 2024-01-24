@@ -1,12 +1,12 @@
 <template>
   <TitleSection>Vado Blog</TitleSection>
-  <!-- <Content>
+  <Content>
     <ClientOnly>
       <ContentList path="/blog" v-slot="{ list }">
         <Pagination :data="list" />
       </ContentList>
     </ClientOnly>
-  </Content> -->
+  </Content>
 </template>
 
 <script>
