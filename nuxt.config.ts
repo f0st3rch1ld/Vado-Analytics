@@ -16,6 +16,12 @@ export default defineNuxtConfig({
         to: '/',
         statusCode: 307
       }
+    },
+    'blog': {
+      redirect: {
+        to: '/',
+        statusCode: 307
+      }
     }
   },
   nitro: {
