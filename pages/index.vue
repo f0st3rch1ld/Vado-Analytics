@@ -9,7 +9,7 @@
     <ExploreOurServices />
     <Operations />
     <!-- <TransformYourBusiness /> -->
-    <RecentPosts />
+<!--    <RecentPosts />-->
   </div>
 </template>
 

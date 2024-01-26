@@ -2,7 +2,7 @@
   <Content>
     <div id="tiles-container">
       <NuxtLink
-        to="services/single-location-analysis"
+        to="/services/single-location-analysis"
         class="service-tile"
         id="single-location-analysis"
       >
@@ -21,7 +21,7 @@
       </NuxtLink>
 
       <NuxtLink
-        to="services/multi-location-analysis"
+        to="/services/multi-location-analysis"
         class="service-tile"
         id="multi-location-analysis"
       >
@@ -39,7 +39,7 @@
       </NuxtLink>
 
       <NuxtLink
-        to="services/new-location-placement"
+        to="/services/new-location-placement"
         class="service-tile"
         id="new-location-placement"
       >
@@ -58,7 +58,7 @@
       </NuxtLink>
 
       <NuxtLink
-        to="services/custom-analytics-projects"
+        to="/services/custom-analytics-projects"
         class="service-tile"
         id="custom-analytics-projects"
       >

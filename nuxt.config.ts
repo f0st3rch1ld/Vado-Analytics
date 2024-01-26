@@ -1,7 +1,9 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: false,
-  devtools: { enabled: true },
+  target: 'static',
+  experimental: {
+    appManifest: false
+  },
   modules: [
     '@pinia/nuxt',
     '@nuxt/content'
@@ -30,4 +32,16 @@ export default defineNuxtConfig({
       clientDB: true
     }
   }
+/*  ,
+  buildModules: [
+    '@nuxt/typescript-build',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/svg',
+    [
+      '@nuxt/image',
+      {
+        provider: 'static',
+      },
+    ],
+  ]*/
 })
