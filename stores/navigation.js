@@ -55,12 +55,6 @@ export const useNavStore = defineStore("nav", {
           target: "_self",
           subMenu: [],
         },
-        {
-          label: "Engagement Form",
-          link: "/engagement-form",
-          target: "_self",
-          subMenu: [],
-        },
       ],
     };
   },

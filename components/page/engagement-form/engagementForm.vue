@@ -2,12 +2,12 @@
   <div class="box">
     <div class="columns is-multiline">
       <div class="column is-full">
-        <h3 class="title is-size-2 mb-0">Engagement Form</h3>
+        <h4 class="title is-size-3 m-3 pb-4">The following is intended to help a potential requestor determine if a given company opportunity is optimal for a database analysis project with Vado Analytics</h4>
       </div>
 
       <div class="column is-half">
         <div class="field">
-          <label>Email•</label>
+          <label>AE point of contact email•</label>
           <div class="control">
             <input
                 v-model="email"
@@ -16,15 +16,13 @@
                 placeholder="AE Email"
             />
           </div>
-          <p v-if="emailMessage" class="help is-danger">
-            {{ emailMessage }}
-          </p>
+          <p v-if="emailMessage" class="help is-danger">{{ emailMessage }}</p>
         </div>
       </div>
 
       <div class="column is-half">
         <div class="field">
-          <label>Company•</label>
+          <label>Company name•</label>
           <div class="control">
             <input
                 v-model="company"
@@ -41,13 +39,13 @@
 
       <div class="column is-half">
         <div class="field">
-          <label>Location City•</label>
+          <label>Company Location•</label>
           <div class="control">
             <input
                 v-model="location"
                 :class="inputClasses('location')"
                 type="text"
-                placeholder="Company Location"
+                placeholder="Company Location, City & State"
             />
           </div>
           <p v-if="locationMessage" class="help is-danger">
@@ -58,7 +56,7 @@
 
       <div class="column is-half">
         <div class="field">
-          <label>Number of Company Locations•</label>
+          <label>Number of Company Retail Locations•</label>
           <div class="control">
             <input
                 v-model="numLoc"
@@ -79,7 +77,7 @@
               v-model="vertical"
               :class="inputClasses('vertical')"
               type="text"
-              placeholder="Company Industry or Vertical"
+              placeholder="Company Industry/Vertical"
             />
           </div>
           <p v-if="verticalMessage" class="help is-danger">
@@ -123,15 +121,34 @@
       </div>
 
       <div class="column is-half">
-        <div class="field">
-          <label>Does the company have a list of competitors?*</label>
-          <div class="control">
-            <input
-                v-model="listComp"
-                :class="inputClasses('listComp')"
-                type="text"
-                placeholder="Competitors to match against"
-            />
+        <div class="pl-3">
+          <div>
+            <label class="checkbox">
+              <input
+                  class="p-2"
+                  v-model="capture"
+                  :class="inputClasses('capture')"
+                  type="checkbox"
+              /><span class="p-3">Does the company capture any first party customer data/website activity that they are willing to provide for analysis?</span>
+            </label>
+          </div>
+          <p v-if="captureMessage" class="help is-danger">
+            {{ captureMessage }}
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="pl-3">
+          <div>
+            <label class="checkbox">
+              <input
+                  class="p-2"
+                  v-model="listComp"
+                  :class="inputClasses('listComp')"
+                  type="checkbox"
+              /><span class="p-3">Does the company have a list of competitors they would like to be matched against?</span>
+            </label>
           </div>
           <p v-if="listCompMessage" class="help is-danger">
             {{ listCompMessage }}
@@ -149,6 +166,118 @@
               placeholder="What is the problem/question the company is trying to solve?"
             />
           </div>
+        </div>
+      </div>
+
+      <div class="column is-full p-4">
+        <h4 class="title is-size-3 mb-0">Has the company expressed any of the following concerns:</h4>
+      </div>
+
+      <div class="column is-half">
+        <div class="pl-3">
+          <div>
+            <label class="checkbox">
+              <input
+                  class="p-2"
+                  v-model="adNotEffective"
+                  :class="inputClasses('adNotEffective')"
+                  type="checkbox"
+              /><span class="p-3">Current Advertising is seen as not being effective enough?</span>
+            </label>
+          </div>
+          <p v-if="adNotEffectiveMessage" class="help is-danger">
+            {{ adNotEffectiveMessage }}
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="pl-3">
+          <div>
+            <label class="checkbox">
+              <input
+                  class="p-2"
+                  v-model="locUnderPerforming"
+                  :class="inputClasses('locUnderPerforming')"
+                  type="checkbox"
+              /><span class="p-3">Some number of existing locations are under-performing?</span>
+            </label>
+          </div>
+          <p v-if="locUnderPerformingMessage" class="help is-danger">
+            {{ locUnderPerformingMessage }}
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="pl-3">
+          <div>
+            <label class="checkbox">
+              <input
+                  class="p-2"
+                  v-model="newLoc"
+                  :class="inputClasses('newLoc')"
+                  type="checkbox"
+              /><span class="p-3">A new location is needed and site selection/first 1-2 year “grand opening” campaign needed?</span>
+            </label>
+          </div>
+          <p v-if="newLocMessage" class="help is-danger">
+            {{ newLocMessage }}
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="pl-3">
+          <div>
+            <label class="checkbox">
+              <input
+                  class="p-2"
+                  v-model="growthExpectations"
+                  :class="inputClasses('growthExpectations')"
+                  type="checkbox"
+              /><span class="p-3">Management has set growth expectations that sales is unsure how to fully meet?</span>
+            </label>
+          </div>
+          <p v-if="growthExpectationsMessage" class="help is-danger">
+            {{ growthExpectationsMessage }}
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="pl-3">
+          <div>
+            <label class="checkbox">
+              <input
+                  class="p-2"
+                  v-model="needPromo"
+                  :class="inputClasses('needPromo')"
+                  type="checkbox"
+              /><span class="p-3">A promotion is needed for a given holiday/overstock situation/point-in-time need?</span>
+            </label>
+          </div>
+          <p v-if="needPromoMessage" class="help is-danger">
+            {{ needPromoMessage }}
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="pl-3">
+          <div>
+            <label class="checkbox">
+              <input
+                  class="p-2"
+                  v-model="newEntrant"
+                  :class="inputClasses('newEntrant')"
+                  type="checkbox"
+              /><span class="p-3">There is a new entrant to the competitive marketplace?</span>
+            </label>
+          </div>
+          <p v-if="newEntrantMessage" class="help is-danger">
+            {{ newEntrantMessage }}
+          </p>
         </div>
       </div>
 
@@ -191,15 +320,15 @@ export default {
       vertical: "",
       expense: "",
       sophisticated: "",
-      capture: "",
-      listComp: "",
+      capture: false,
+      listComp: false,
       whatProblem: "",
-      adNotEffective: "",
-      locUnderPerforming: "",
-      newLoc: "",
-      growthExpectations: "",
-      needPromo: "",
-      newEntrant: "",
+      adNotEffective: false,
+      locUnderPerforming: false,
+      newLoc: false,
+      growthExpectations: false,
+      needPromo: false,
+      newEntrant: false,
       emailMessage: "",
       companyMessage: "",
       locationMessage: "",
@@ -240,7 +369,7 @@ export default {
       };
     },
     generatedLink() {
-      return `mailto:info@vadoanalytics.com?subject=Vado%20Engagement%20Questionnaire&body=Email%3A%20${this.email}%0ACompany%3A%20${this.company}%0ALocation%3A%20${this.location}%0AProblem%3A%20${this.whatProblem}%0A`;
+      return `mailto:info@vadoanalytics.com?subject=Vado%20Engagement%20Questionnaire&body=Email%3A%20${this.email}%0ACompany%3A%20${this.company}%0ALocation%3A%20${this.location}%0ANumber%20Locations%3A%20${this.numLoc}%0ACompany%20Vertical%3A%20${this.vertical}%0AAdvertising%20Expense%3A%20${this.expense}%0AAnalytics%20Sophistication%3A%20${this.sophisticated}%0ACustomer%20Data%3A%20${this.capture}%0ACompetitor%20List%3A%20${this.listComp}%0AProblem%3A%20${this.whatProblem}%0ACurrent%20Advertising%20Not%20Effective%3A%20${this.adNotEffective}%0AUnderPerforming%20Locations%3A%20${this.locUnderPerforming}%0ANew%20Locations%3A%20${this.newLoc}%0AHard%20Growth%20Expectations%3A%20${this.growthExpectations}%0APromo%20Needed%3A%20${this.needPromo}%0ANew%20Entrant%3A%20${this.newEntrant}%0A%0A`;
     },
   },
 
@@ -262,10 +391,10 @@ export default {
           this.expense.length > 0 ? "" : "Expense is required.";
       this.sophisticatedMessage =
           this.sophisticated.length > 0 ? "" : "Sophistication Level (Low/Medium/High) is required.";
-      this.captureMessage =
+/*      this.captureMessage =
           this.capture.length > 0 ? "" : "Data Capture (Y/N) is required.";
       this.listCompMessage =
-          this.listComp.length > 0 ? "" : "Listing Competitors (Y/N) is required.";
+          this.listComp.length > 0 ? "" : "Listing Competitors (Y/N) is required.";*/
     },
     inputClasses(input) {
       switch (input) {
@@ -310,18 +439,6 @@ export default {
           return {
             input: true,
             "is-danger": this.sophisticated.length === 0 && this.submitted,
-          };
-          break;
-        case "capture":
-          return {
-            input: true,
-            "is-danger": this.capture.length === 0 && this.submitted,
-          };
-          break;
-        case "listComp":
-          return {
-            input: true,
-            "is-danger": this.listComp.length === 0 && this.submitted,
           };
           break;
         case "whatProblem":

@@ -16,13 +16,13 @@
 
 <script>
 import TitleSection from "~/components/common/page/titleSection";
-import ContactUsForm from "~/components/page/contact-us/contactUsForm";
+import EngagementForm from "~/components/page/engagement-form/engagementForm";
 
 export default {
   name: "Engagement Form",
   components: {
     TitleSection,
-    ContactUsForm,
+    EngagementForm,
   },
 };
 </script>
