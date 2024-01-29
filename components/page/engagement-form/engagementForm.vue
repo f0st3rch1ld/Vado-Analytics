@@ -22,13 +22,13 @@
 
       <div class="column is-half">
         <div class="field">
-          <label>Company name•</label>
+          <label>Client name•</label>
           <div class="control">
             <input
                 v-model="company"
                 :class="inputClasses('company')"
                 type="text"
-                placeholder="Company Name"
+                placeholder="Client Name"
             />
           </div>
           <p v-if="companyMessage" class="help is-danger">
@@ -39,13 +39,13 @@
 
       <div class="column is-half">
         <div class="field">
-          <label>Company Location•</label>
+          <label>Retail Locations•</label>
           <div class="control">
             <input
                 v-model="location"
                 :class="inputClasses('location')"
                 type="text"
-                placeholder="Company Location, City & State"
+                placeholder="Retail Locations, City & State"
             />
           </div>
           <p v-if="locationMessage" class="help is-danger">
